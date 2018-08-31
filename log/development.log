@@ -223,3 +223,35 @@ Processing by PostsController#create as HTML
   [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
 Redirected to http://192.241.157.192:53999/posts/5
 Completed 302 Found in 40ms (ActiveRecord: 20.4ms)
+
+
+Started GET "/posts/5" for 98.221.88.135 at 2018-08-31 20:02:33 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 404ms (Views: 392.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 98.221.88.135 at 2018-08-31 20:02:49 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 98.221.88.135 at 2018-08-31 20:02:57 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Su+SSyj8Ll/NOrhmxUd7iJ4vU+QO3t3gIeuEbjeCsW9QMuwCAdIgeOyNxCuyOu0R4KnNqz85dxii2ek2QRcERQ==", "title"=>"abcdefg", "description"=>"abcdefg", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "abcdefg"], ["description", "abcdefg"], ["created_at", "2018-08-31 20:02:58.001619"], ["updated_at", "2018-08-31 20:02:58.001619"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.157.192:53999/posts/6
+Completed 302 Found in 8ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/6" for 98.221.88.135 at 2018-08-31 20:02:58 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.2ms)
